@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 @observer
 class Item extends Component {
     checkItem = () => {
-        //your code here
+        this.props.item.completed = !this.props.item.completed
       }
       editItem = () => {
         //your code here
@@ -13,9 +13,11 @@ class Item extends Component {
         //your code here
       }
     render() {
+      let item = this.props.item
         return (
-            <div className = "">
-              {this.props.item.name}
+            <div className={item.completed ? "completed" : "unCompleted"}>               
+               {item.name}<input type="checkbox" value={item.name}/>
+              
       {/*   your code here
             each item should be in an input checkbox
             it should display the item name and location
