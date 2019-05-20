@@ -15,6 +15,7 @@ class Item extends Component {
     render() {
         return (
             <div className = "">
+              {this.props.item.name}
       {/*   your code here
             each item should be in an input checkbox
             it should display the item name and location
